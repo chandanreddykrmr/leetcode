@@ -2,7 +2,8 @@ class Solution {
     public boolean isValid(String s) {
         
      Stack<Character> stack = new Stack<>();
-
+     int length = s.length() % 2;
+     if(length == 0 ){
          for(int i = 0; i < s.length(); i++){
              char c = s.charAt(i);
              if(c == '(' || c == '{' || c == '['){
@@ -18,7 +19,8 @@ class Solution {
                  }
              }
          }
-
-     return stack.isEmpty();
+         return stack.isEmpty();
+     } 
+     return false;
     }
 }
