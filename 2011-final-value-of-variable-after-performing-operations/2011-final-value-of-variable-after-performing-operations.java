@@ -3,7 +3,8 @@ class Solution {
         int val = 0;
         
         for(int i = 0; i < operations.length; i++){
-            if(operations[i].equals("++X") || operations[i].equals("X++")){
+            String s = operations[i];
+            if(s.equals("++X") || s.equals("X++")){
                 val++;
             }else{
                 val--;
