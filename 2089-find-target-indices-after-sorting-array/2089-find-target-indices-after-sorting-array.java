@@ -1,21 +1,20 @@
 class Solution {
     public List<Integer> targetIndices(int[] nums, int target) {
+       int belowCount = 0;
+        int totalCount= 0;
         
-        List<Integer> list = new LinkedList<Integer>(); 
-        int left = 0;
-        int right = nums.length - 1;
+        for(int i= 0; i < nums.length; i++){
+            if(nums[i] == target){
+                totalCount++;
+            }else if(nums[i] < target){
+                belowCount++;
+            }
+        }
         
-        for (int num : nums) {
-        list.add(num);
-    }
-    Collections.sort(list);
+        ArrayList<Integer> a = new ArrayList<>();
         
-        ArrayList<Integer> a = new ArrayList<Integer>();
-        
-        for(int i = 0; i < list.size(); i++){
-           if(list.get(i) == target){
-               a.add(i);
-           }
+        for(int j = 0; j < totalCount; j++){
+            a.add(belowCount++);
         }
         
         return a;
