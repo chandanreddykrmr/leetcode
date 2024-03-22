@@ -1,10 +1,7 @@
 class Solution {
     public int[] smallerNumbersThanCurrent(int[] nums) {
-        ArrayList<Integer> list = new ArrayList<>();
-        
-        int hold = 0;
-        int search = 0;
-        
+        // ArrayList<Integer> list = new ArrayList<>();
+        int[] result = new int[nums.length];
         for(int i = 0; i < nums.length; i++){
             int count = 0;
             for(int j = 0; j < nums.length; j++){
@@ -12,13 +9,15 @@ class Solution {
                     count++;
                 }
             }
-            list.add(count);
+            // list.add(count);
+            result[i] = count;
         }
+       
         
-        int[] result = new int[list.size()];
-        for(int k = 0; k < list.size(); k++){
-            result[k] = list.get(k);
-        }
+        
+//         for(int k = 0; k < list.size(); k++){
+//             result[k] = list.get(k);
+//         }
         return result;
     }
 }
